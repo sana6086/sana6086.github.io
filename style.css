@@ -663,6 +663,27 @@ section{
     color: var(--text);
     font-weight: 600;
 }
+
+/* --- Force single column if two .certs blocks sit side-by-side --- */
+/* Covers common wrapper patterns: a grid/flex parent holding two .certs divs */
+.certs-grid,
+.certs-columns,
+.certs-wrapper,
+.education-grid,
+.education-content {
+    display: block !important;
+}
+
+/* If the parent is a 2-col grid, this collapses it to 1 column */
+section:has(> .certs):is([class]) {
+    grid-template-columns: 1fr !important;
+}
+
+/* Stack any two adjacent .certs blocks and merge their look into one list */
+.certs + .certs {
+    margin-top: -1px; /* avoid doubled border between the two blocks */
+    border-top: none;
+}
 /* ===========================================================
    CONTACT
 =========================================================== */
