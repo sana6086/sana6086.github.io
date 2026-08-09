@@ -638,8 +638,8 @@ section{
    CERTIFICATIONS
 =========================================================== */
 .certs {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -652,6 +652,7 @@ section{
     font-size: 0.95rem;
     border-bottom: 1px solid var(--border);
     color: var(--text-dim);
+    width: 100%;
 }
 
 .cert:last-child {
